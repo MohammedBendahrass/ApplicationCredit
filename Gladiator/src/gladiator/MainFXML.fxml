@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gladiator.MainFXMLController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane prefHeight="515.0" prefWidth="307.0" styleClass="left-form" stylesheets="@Login.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" layoutX="77.0" layoutY="233.0" size="12em" />
+                  <Label layoutX="54.0" layoutY="244.0" prefHeight="28.0" prefWidth="214.0" text="Credit Management" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="admin_form" layoutX="307.0" layoutY="-2.0" prefHeight="515.0" prefWidth="398.0" styleClass="right-form" stylesheets="@Login.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <FontAwesomeIconView glyphName="USER" layoutX="152.0" layoutY="164.0" size="10em" />
+                  <Label layoutX="124.0" layoutY="183.0" text="Admin Sign In">
+                     <font>
+                        <Font name="Times New Roman Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="admin_username" layoutX="78.0" layoutY="242.0" onAction="#adminLogin" prefHeight="35.0" prefWidth="242.0" promptText="Username" styleClass="textfield" stylesheets="@Login.css" />
+                  <PasswordField fx:id="admin_password" layoutX="79.0" layoutY="311.0" onAction="#adminLogin" prefHeight="35.0" prefWidth="242.0" promptText="Password" styleClass="textfield" stylesheets="@Login.css" />
+                  <Button fx:id="admin_loginBtn" layoutX="140.0" layoutY="369.0" mnemonicParsing="false" onAction="#adminLogin" prefHeight="43.0" prefWidth="83.0" styleClass="login-btn" stylesheets="@Login.css" text="Login" />
+                  <Hyperlink fx:id="admin_hyperLink" layoutX="119.0" layoutY="472.0" onAction="#switchFrom" stylesheets="@Login.css" text="Login Client Account?" />
+                  <Button layoutX="333.0" mnemonicParsing="false" onAction="#close" prefHeight="31.0" prefWidth="62.0" styleClass="close" stylesheets="@Login.css" AnchorPane.bottomAnchor="484.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <FontAwesomeIconView glyphName="CLOSE" layoutX="359.0" layoutY="21.0" size="1.4em" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="client_form" layoutX="316.0" layoutY="10.0" prefHeight="515.0" prefWidth="398.0" styleClass="right-form" stylesheets="@Login.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <FontAwesomeIconView glyphName="USER" layoutX="152.0" layoutY="164.0" size="10em" />
+                  <Label layoutX="124.0" layoutY="183.0" text="Client Sign In">
+                     <font>
+                        <Font name="Times New Roman Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="client_id" layoutX="78.0" layoutY="242.0" onAction="#clientLogin" prefHeight="35.0" prefWidth="242.0" promptText="Client ID" styleClass="textfield" stylesheets="@Login.css" />
+                  <PasswordField fx:id="client_password" layoutX="79.0" layoutY="311.0" onAction="#clientLogin" prefHeight="35.0" prefWidth="242.0" promptText="Password" styleClass="textfield" stylesheets="@Login.css" />
+                  <Button fx:id="client_LoginBtn" layoutX="140.0" layoutY="369.0" mnemonicParsing="false" onAction="#clientLogin" prefHeight="43.0" prefWidth="83.0" styleClass="login-btn" stylesheets="@Login.css" text="Login" />
+                  <Hyperlink fx:id="client_hyperLink" layoutX="119.0" layoutY="472.0" onAction="#switchFrom" stylesheets="@Login.css" text="Login Admin Account?" />
+                  <Button layoutX="333.0" mnemonicParsing="false" onAction="#close" prefHeight="31.0" prefWidth="62.0" styleClass="close" stylesheets="@Login.css" AnchorPane.bottomAnchor="484.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <FontAwesomeIconView glyphName="CLOSE" layoutX="359.0" layoutY="21.0" size="1.4em" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

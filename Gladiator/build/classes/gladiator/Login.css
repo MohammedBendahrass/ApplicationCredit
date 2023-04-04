@@ -1,0 +1,68 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 31 mars 2023, 19:30:56
+    Author     : pc
+*/
+
+
+.left-form{
+   -fx-background-color: linear-gradient(to top right, #64522c, #a8962b);
+   -fx-border-color: #000;
+   -fx-border-woidth: .4px 0pw .4px 0px;
+}
+
+.right-form{
+    -fx-background-color: #fff;
+    -fx-border-color: #000;
+    -fx-border-width: .4px .4px .4px 0px;
+}
+
+.textfield{
+    -fx-background-color: linear-gradient(to bottom, #efefef, #ddd);
+    -fx-background-redius: 8px;
+    -fx-border-color: #000;
+    -fx-border-width: 0px 0px .8px 0px;
+    -fx-font-family: "Tahoma";
+    -fx-font-size: 13px;
+}
+
+.textfield:focused{
+    -fx-background-color: #efefef;
+    -fx-border-width: 0px 0px 1.8px 0px;
+}
+
+.login-btn{
+    -fx-background-color: linear-gradient(to bottom, #2365a7, #213c57);
+    -fx-backround-radius: 8px;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+}
+
+.login-btn:hover{
+    -fx-background-color:linear-gradient(to bottom, #3d85cc, #295986);  
+}
+
+.close{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.close:hover{
+    -fx-background-color: #dd2f4f;
+}
+
+.hyperlink{
+    -fx-border-color: transparent;
+    -fx-font-family: "Tahoma";
+    -fx-font-size: 14px;
+    -fx-text-fill: #369eda;
+}
+
+.hyperlink:hover{
+    -fx-text-fill: #000;
+} 

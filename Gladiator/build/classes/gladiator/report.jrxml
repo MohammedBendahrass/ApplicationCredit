@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="226" pageHeight="566" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="695f2118-b28e-4ed4-bf21-98acd192c2a5">
+	<property name="ireport.zoom" value="2.5937424601000028"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="96"/>
+	<parameter name="creditP" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     customer.`id` AS customer_id,
+     customer.`customer_id` AS customer_customer_id,
+     customer.`brand` AS customer_brand,
+     customer.`productName` AS customer_productName,
+     customer.`quantity` AS customer_quantity,
+     customer.`date` AS customer_date,
+     customer.`price` AS customer_price,
+     customer_receipt.`id` AS customer_receipt_id,
+     customer_receipt.`customer_id` AS customer_receipt_customer_id,
+     customer_receipt.`total` AS customer_receipt_total,
+     customer_receipt.`date` AS customer_receipt_date
+FROM
+     `customer` customer INNER JOIN `customer_receipt` customer_receipt ON customer.`customer_id` = customer_receipt.`customer_id`
+WHERE
+     customer_receipt.`customer_id` = $P{creditP}]]>
+	</queryString>
+	<field name="customer_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="customer_customer_id" class="java.lang.Integer"/>
+	<field name="customer_brand" class="java.lang.String"/>
+	<field name="customer_productName" class="java.lang.String"/>
+	<field name="customer_quantity" class="java.lang.Integer"/>
+	<field name="customer_date" class="java.sql.Date"/>
+	<field name="customer_price" class="java.lang.Double"/>
+	<field name="customer_receipt_id" class="java.lang.Integer"/>
+	<field name="customer_receipt_customer_id" class="java.lang.Integer"/>
+	<field name="customer_receipt_total" class="java.lang.Double"/>
+	<field name="customer_receipt_date" class="java.sql.Date"/>
+	<group name="creditFooter">
+		<groupExpression><![CDATA[$F{customer_id}]]></groupExpression>
+		<groupFooter>
+			<band height="39">
+				<staticText>
+					<reportElement x="81" y="0" width="32" height="20" uuid="2d5446d4-0c03-436b-a37d-8f441b23d72f"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Total:$]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="113" y="0" width="41" height="20" uuid="8f0c01b0-d945-45ad-aaf3-06eeee46497a"/>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{customer_receipt_total}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement x="24" y="25" width="121" height="40" uuid="1ee06cb1-c22a-456f-9d93-a3fb734472a3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Copperplate Gothic Bold" size="16"/>
+				</textElement>
+				<text><![CDATA[Application Credit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="0" width="54" height="14" uuid="5e4d42b4-8024-4a5e-aa06-905f1b7faf15"/>
+				<text><![CDATA[Customer#:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="0" width="56" height="25" uuid="c409b21f-5286-4fa6-b150-cc970a90f987"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_customer_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="113" y="8" width="50" height="12" uuid="f8083284-36c7-4b1a-b059-9c6a25b65c62"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="53" y="8" width="60" height="12" uuid="e1fce35c-9f13-452a-a3a4-79840f546091"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="24" y="8" width="29" height="12" uuid="2d9a5a1a-9109-412d-8882-e73df7866c2a"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Brand]]></text>
+			</staticText>
+			<line>
+				<reportElement x="24" y="7" width="139" height="1" uuid="584df057-012a-4cd5-9d23-ef45da8078dd"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="24" y="22" width="139" height="1" uuid="a25e7f62-dfa8-4b93-aa48-9df04783f15f"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="113" y="0" width="50" height="16" uuid="7f59f77c-9d03-4c25-b64b-18b5054ffb5b"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="53" y="0" width="60" height="16" uuid="79be0ecd-6945-40e0-8261-b07e3c70515f"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_productName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="0" width="29" height="16" uuid="5e0ec8e4-53ef-4bd7-bb1a-139518c78921"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_brand}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
